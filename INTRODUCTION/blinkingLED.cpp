@@ -1,4 +1,4 @@
-const int ledPin2 = 2;
+const int ledPin2 = 2;  // LED connected to pin 2 of the arduino
 
 void setup()
 {

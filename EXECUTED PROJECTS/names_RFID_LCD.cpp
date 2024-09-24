@@ -69,7 +69,17 @@ void loop(){
       
       matchFound = true;
       break;
-    }
-    
+    }   
 }
+ if (!matchFound) {
+    Serial.print("Unknown card UID: ");
+    printUID(mfrc522.uid.uidByte, mfrc522.uid.size);
+    
+    // Display "Unknown" on the LCD
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Unknown UID");
+  }
 
+  mfrc522.PICC_HaltA();
+}

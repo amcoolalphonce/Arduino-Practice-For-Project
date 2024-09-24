@@ -83,3 +83,23 @@ void loop(){
 
   mfrc522.PICC_HaltA();
 }
+
+
+//check if two UIDs are the same
+bool isSameUID(byte uid1[], byte uid2[]) {
+  for (byte i = 0; i < 4; i++) {
+    if (uid1[i] != uid2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+//print the UID
+void printUID(byte *uid, byte length) {
+  for (byte i = 0; i < length; i++) {
+    Serial.print(uid[i] < 0x10 ? " 0" : " ");
+    Serial.print(uid[i], HEX);
+  }
+  Serial.println();
+}

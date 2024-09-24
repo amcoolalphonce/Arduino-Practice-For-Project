@@ -103,3 +103,5 @@ void printUID(byte *uid, byte length) {
   }
   Serial.println();
 }
+
+// THE FEATURE FOR DISPLAYING THE NAMES IS NOT YET WORKING WELL,workinng on it

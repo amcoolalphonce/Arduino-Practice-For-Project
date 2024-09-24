@@ -18,3 +18,10 @@ byte knownUIDs[][4] = {
 {0xFA, 0x6A, 0x12, 0xBE},
 {0x5C, 0x4F, 0xFC, 0x5B},
 };
+
+String names[] = {
+  "JOSEPH",   
+  "ABDALLAH",   
+  "WILLIAMS",    
+  "RAJBALIG"    
+};

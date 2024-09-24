@@ -41,3 +41,35 @@ void setup(){
   lcd.setCursor(0,0);
   lcd.print("SCAN A CARD"); // startup message
 }
+
+
+void loop(){
+    if (!mfrc522.PICC_IsNewCardPresent()) { // reset loop if no new card is there
+    delay(10);
+    return;
+
+    if (!mfrc522.PICC_ReadCardSerial()) { // select one card
+    delay(10);
+    return;
+  }
+      //Check for matches between known UIDs and selected cards 
+  bool matchFound = false;
+  for (int i = 0; i < sizeof(knownUIDs) / sizeof(knownUIDs[0]); i++) {
+    if (isSameUID(knownUIDs[i], mfrc522.uid.uidByte)) {
+      Serial.print("Card UID: ");
+      printUID(mfrc522.uid.uidByte, mfrc522.uid.size);
+      Serial.print(" -> Name: ");
+      Serial.println(names[i]);
+
+      lcd.clear();                  
+      lcd.setCursor(0, 0);          
+      lcd.print("Name:");
+      lcd.setCursor(0, 1);         
+      lcd.print(names[i]);
+      
+      matchFound = true;
+      break;
+    }
+    
+}
+

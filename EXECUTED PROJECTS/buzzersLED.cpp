@@ -14,3 +14,12 @@ void setup() {
   pinMode(blueLED, OUTPUT);
   pinMode(buzzer, OUTPUT);
 }
+
+void loop() {
+  digitalWrite(redLED, HIGH);  
+  tone(buzzer, tone1);         
+  delay(500);                   
+  digitalWrite(redLED, LOW);    
+  noTone(buzzer);               
+  delay(200);                 
+

@@ -16,10 +16,17 @@ void setup() {
 }
 
 void loop() {
+// play the first tone and light red
   digitalWrite(redLED, HIGH);  
   tone(buzzer, tone1);         
   delay(500);                   
   digitalWrite(redLED, LOW);    
   noTone(buzzer);               
-  delay(200);                 
-
+  delay(200);    
+// [lay the sceond tone and light green
+  digitalWrite(greenLED, HIGH); 
+  tone(buzzer, tone2);          
+  delay(500);                   
+  digitalWrite(greenLED, LOW);  
+  noTone(buzzer);               
+  delay(200);                   

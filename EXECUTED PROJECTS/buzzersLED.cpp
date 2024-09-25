@@ -7,3 +7,10 @@ const int buzzer = 6;
 int tone1 = 262; // C4
 int tone2 = 294; // D4
 int tone3 = 330; // E4
+
+void setup() {
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(blueLED, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}

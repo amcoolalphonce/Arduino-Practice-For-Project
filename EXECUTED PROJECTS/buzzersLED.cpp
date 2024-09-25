@@ -29,4 +29,11 @@ void loop() {
   delay(500);                   
   digitalWrite(greenLED, LOW);  
   noTone(buzzer);               
-  delay(200);                   
+  delay(200);     
+// play the third tone and light up blue
+  digitalWrite(blueLED, HIGH);
+  tone(buzzer, tone3);
+  delay(500);
+  digitalWrite(blueLED, LOW); 
+  noTone(buzzer);   
+  delay(200);

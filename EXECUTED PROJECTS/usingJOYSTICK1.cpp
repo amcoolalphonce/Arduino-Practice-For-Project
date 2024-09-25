@@ -12,3 +12,25 @@ void setup() {
   // button pin as input with a pull-up resistor
   pinMode(SWPin, INPUT_PULLUP);
 }
+
+void loop() {
+  xValue = analogRead(VRxPin);
+  yValue = analogRead(VRyPin);
+
+  
+  buttonState = digitalRead(SWPin);
+
+  // Print the values to the serial monitor
+  Serial.print("X-axis: ");
+  Serial.print(xValue);
+  Serial.print("\tY-axis: ");
+  Serial.print(yValue);
+
+  if (buttonState == LOW) {
+    Serial.println("\tButton Pressed");
+  } else {
+    Serial.println("\tButton Not Pressed");
+  }
+
+  delay(1000);
+}

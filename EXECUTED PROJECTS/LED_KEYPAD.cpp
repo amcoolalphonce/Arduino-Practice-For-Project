@@ -15,3 +15,25 @@ byte colPins[COLS] = {6, 7, 8, 9}; // Column pins
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 const int ledPin = 10;
+
+void setup() {
+  Serial.begin(9600); 
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+}
+
+void loop() {
+  char key = keypad.getKey(); 
+
+  if (key) { 
+    Serial.println(key);
+    blinkLED();
+  }
+}
+
+void blinkLED() {
+  digitalWrite(ledPin, HIGH); 
+  delay(200);
+  digitalWrite(ledPin, LOW); 
+  delay(200); 
+}

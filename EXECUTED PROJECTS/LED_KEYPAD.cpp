@@ -8,3 +8,10 @@ char keys[ROWS][COLS] = {
   {'4', '5', '6', 'B'},
   {'7', '8', '9', 'C'},
   {'*', '0', '#', 'D'}
+
+byte rowPins[ROWS] = {2, 3, 4, 5}; // Row pins
+byte colPins[COLS] = {6, 7, 8, 9}; // Column pins
+
+Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+const int ledPin = 10;
